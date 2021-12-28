@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h2>Bài 1/ Quản lý tuyển sinh:</h2>
+    <h4>Nhập điểm chuẩn:</h4>
+    <input type="text" id="diemchuan" placeholder="Điểm chuẩn" />
+    <h4>Nhập điểm thi 3 môn:</h4>
+    <span>Môn thi 1: </span
+    ><input type="text" id="diem1" placeholder="Điểm môn thi 1" />
+    <span>Môn thi 2: </span
+    ><input type="text" id="diem2" placeholder="Điểm môn thi 2" />
+    <span>Môn thi 3: </span
+    ><input type="text" id="diem3" placeholder="Điểm môn thi 3" />
+    <h4>Điểm ưu tiên:</h4>
+    <span>Khu vực: </span
+    ><input type="text" id="khuvuc" placeholder="Khu vực" />
+    <span>Đối tượng: </span
+    ><input type="text" id="doituong" placeholder="Đối tượng" />
+    <br />
+    <br />
+    <button class="btn-primary" onclick="tinhdiem()">KẾT QUẢ</button>
+    <br />
+    <br />
+    <span>Điểm tổng 3 môn: </span><span id="3mon"></span>
+    <br />
+    <br />
+    <span>Điểm cộng khu vực: </span><span id="congkhuvuc"></span>
+    <br />
+    <br />
+    <span>Điểm cộng đối tượng: </span><span id="congdoituong"></span>
+    <br />
+    <br />
+    <span>Điểm tổng kết của thí sinh: </span><span id="diemtongket"></span>
+    <br />
+    <br />
+    <h3 id="ketqua1"></h3>
+    <hr />
+    <h2>Bài 2/ Tính tiền điện:</h2>
+    <h4>Nhập tên:</h4>
+    <input type="text" placeholder="Nhập tên" id="ten2" />
+    <h4>Nhập số điện tiêu thụ:</h4>
+    <input type="text" placeholder="Nhập số điện" id="sokw" /><span> kW</span>
+    <br />
+    <br />
+    <button class="btn-primary" onclick="tinhtien()">Tính tiền!</button>
+    <br />
+    <br />
+    <h3 id="ketqua2"></h3>
+    <hr />
+    <h2>Bài 3/ Tính thuế thu nhập cá nhân:</h2>
+    <h4>Nhập tên:</h4>
+    <input type="text" id="ten3" placeholder="Nhập tên" />
+    <h4>Nhập tổng thu nhập năm:</h4>
+    <input
+      type="text"
+      id="tongThuNhap"
+      placeholder="Nhập tổng thu nhập năm"
+    /><span> Triệu VNĐ</span>
+    <h4>Nhập số người phụ thuộc:</h4>
+    <input type="text" id="soNguoi" placeholder="Nhập số người" /><span>
+      Người</span
+    >
+    <br />
+    <br />
+    <button class="btn-primary" onclick="tinhthue()">Tính thuế!</button>
+    <br />
+    <br />
+    <p id="thunhap"></p>
+    <p id="thuesuat"></p>
+    <h3 id="ketqua3"></h3>
+    <hr />
+    <h2>Bài 4/ Tính tiền cáp:</h2>
+    <h4>Nhập mã khách hàng:</h4>
+    <input type="text" id="maKH" placeholder="Nhập mã KH" />
+    <h4>Chọn loại khách hàng:</h4>
+    <ul>
+      <li>
+        <input type="radio" value="CN" id="CN" name="selector" />
+        <label for="CN">Cá Nhân</label>
+        <div class="check"></div>
+      </li>
+      <li>
+        <input type="radio" value="DN" id="DN" name="selector" />
+        <label for="DN">Doanh Nghiệp</label>
+        <div class="check"></div>
+      </li>
+    </ul>
+
+    <button class="btn-primary" onclick="chonLoai()">Chọn!</button>
+    <br />
+    <br />
+    <div class="ketnoi" id="showketnoi">
+      <h4>Nhập số kết nối:</h4>
+      <input type="text" id="ketnoi" placeholder="Nhập số kết nối" /><span>
+        Kết nối</span
+      >
+    </div>
+
+    <div class="kenh" id="showkenh">
+      <h4>Nhập số kênh:</h4>
+      <input type="text" id="kenh" placeholder="Nhập số kênh" /><span>
+        Kênh</span
+      >
+    </div>
+
+    <br />
+    <br />
+    <button class="btn-primary" onclick="tinhgia()">Tính giá!</button>
+    <h3 id="ketqua4"></h3>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./bai1.js"></script>
+    <script src="./bai2.js"></script>
+    <script src="./bai3.js"></script>
+    <script src="./bai4.js"></script>
+  </body>
+</html>
